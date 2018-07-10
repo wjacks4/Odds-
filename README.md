@@ -9,7 +9,7 @@ STEPS FOR EXECUTION
 (A great video covering the steps AFTER 6 below for Windows can be found here -> https://www.youtube.com/watch?v=bi7ow5NGC-U)
 
 
-   1. First, an Amazon Virtual Machine needs to be created. The first step in this process is to navigate to the Amazon Web Services homepage and select "Create a free account" 
+   1. First, an Amazon Virtual Machine needs to be created. Navigate to the Amazon Web Services homepage and select "Create a free account" 
    
    2. Once your account has been created, navigate to the "Instances" tab, and select the blue button labeled "Launce Instance"
 

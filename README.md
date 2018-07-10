@@ -9,13 +9,13 @@ STEPS FOR EXECUTION
 (A great video covering the steps AFTER 6 below for Windows can be found here -> https://www.youtube.com/watch?v=bi7ow5NGC-U)
 
 
-   1. First, an Amazon Virtual Machine needs to be created. The first step in this process is to navigate to the Amazon Web Services           homepage and select "Create a free account" 
+   1. First, an Amazon Virtual Machine needs to be created. The first step in this process is to navigate to the Amazon Web Services homepage and select "Create a free account" 
    
    2. Once your account has been created, navigate to the "Instances" tab, and select the blue button labeled "Launce Instance"
 
    3. Select the first Ubuntu server option you see.
    
-   4. All the default settings are fine except for the Security Group configuration, so click the "Next: ..." button at the bottom of         the screen until you get to the page titled "Step 6: Configure Security Group"
+   4. All the default settings are fine except for the Security Group configuration, so click the "Next: ..." button at the bottom of   the screen until you get to the page titled "Step 6: Configure Security Group"
    
    5. Add three rules. Once added, click "Review and Launch", then "Launch" on the following screen
       
@@ -25,9 +25,9 @@ STEPS FOR EXECUTION
       
       Custom TCP Rule - For this one, enter "8080" into the "Port" blank.
       
-   6. In the ensuing pop-up, select "Create a new key pair" and choose an applicable name that suits you. Then click "Download Key             Pair". Store the Key Pair in a convenient folder. Then click "Launch Instance." Your Virtual Machine is now running!
+   6. In the ensuing pop-up, select "Create a new key pair" and choose an applicable name that suits you. Then click "Download Key       Pair". Store the Key Pair in a convenient folder. Then click "Launch Instance." Your Virtual Machine is now running!
    
-   7. Once the key pair has downloaded, it's time to install PuTTY which will allow you to enter into your virtual                             machine. The link to install the program is below. Select the 64 bit version.  
+   7. Once the key pair has downloaded, it's time to install PuTTY which will allow you to enter into your virtual                       machine. The link to install the program is below. Select the 64 bit version.  
    
         https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
         
@@ -35,17 +35,17 @@ STEPS FOR EXECUTION
    
    9. In PuTTYgen, select "Load", then navigate to the folder in which you stored the .pem file downloaded from AWS in step 6. 
    
-   10. Select "All Files" from the drop-down menu next to the file name bar at the bottom of the screen. By default, only .ppk                  files are visible.
+   10. Select "All Files" from the drop-down menu next to the file name bar at the bottom of the screen. By default, only .ppk           files are visible.
    
    11. Once your downloaded .pem file is visible, select it and click "Open". 
    
-   12. Back in the PuTTYgen window, select "Save Private Key", accept the following prompt, and name your .ppk file. You now have the          key that will open the door to your AWS machine!
+   12. Back in the PuTTYgen window, select "Save Private Key", accept the following prompt, and name your .ppk file. You now have the   key that will open the door to your AWS machine!
    
-   13. Now open the PuTTY application. On the home page, find the "Host Name (or IP address)" blank. In this blank, you will need to            enter the string of numbers under the "Public DNS (IPv4)" column of your instances tab in the AWS dashboard. It should look             something like this:
+   13. Now open the PuTTY application. On the home page, find the "Host Name (or IP address)" blank. In this blank, you will need to     enter the string of numbers under the "Public DNS (IPv4)" column of your instances tab in the AWS dashboard. It should look             something like this:
    
           ec2-18-223-227-236.us-east-2.compute.amazonaws.com
  
-   14. Finally, you will need to use the "key" that we generated earlier. Expand the "SSH" sub-menu of "Connection", then select "Auth".        Once there, click "Browse" and find your .ppk file generated in step 12. Click "Open" - you should see a terminal appear. Accept        the pop-up. 
+   14. Finally, you will need to use the "key" that we generated earlier. Expand the "SSH" sub-menu of "Connection", then select "Auth". Once there, click "Browse" and find your .ppk file generated in step 12. Click "Open" - you should see a terminal appear. Accept        the pop-up. 
    
    15. In the first line of the terminal, enter "ubuntu" in the "login as:" prompt. You are now controlling your AWS virtual machine!
    
@@ -58,7 +58,7 @@ STEPS FOR EXECUTION
 (Great instructions for this whole process can be found in this video - https://www.youtube.com/watch?v=Qxs7CYguo70)
 
 
-  1. This video does a better job than I can at explaining this process. The purpose of this is to transfer the python files in this          repo into the /home/ubuntu/ directory of the AWS virtual machine. 
+  1. This video does a better job than I can at explaining this process. The purpose of this is to transfer the python files in this     repo into the /home/ubuntu/ directory of the AWS virtual machine. 
 
 
 
@@ -103,20 +103,20 @@ STEPS FOR EXECUTION
           
  2. Next, the "geckodriver" functionality of the selenium webdriver installed in the previous step needs to installed with the following     commands (copy the wget line and right click on the command prompt, it will automatically run)
 
-    wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   
-    tar -xvzf geckodriver-v0.18.0-linux64.tar.gz
+tar -xvzf geckodriver-v0.18.0-linux64.tar.gz
   
-    chmod +x geckodriver
+chmod +x geckodriver
   
-    sudo mv geckodriver /usr/local/bin/geckodriver
+sudo mv geckodriver /usr/local/bin/geckodriver
   
   
   
   
 ##################### CREATE SQL DATABASE WHERE DATA WILL BE STORED ###############################
     
-  1. Enter into your MySQL server with the following command. You will be asked to enter your password that you created when installing      MySQL server in the previous step. You will not be able to see your password being typed, but it's there. 
+  1. Enter into your MySQL server with the following command. You will be asked to enter your password that you created when installing MySQL server in the previous step. You will not be able to see your password being typed, but it's there. 
   
       mysql -uroot -p
       
@@ -190,7 +190,7 @@ STEPS FOR EXECUTION
     python3 Action_Network_MLB_Scrape.py
     
 
-2. Output from the script should appear on the terminal, but the data should also enter into the SQL database you set up earlier. To        check this, navigate into your MySQL 'book' database like you did earlier, but once in the book, enter the following commands to see    the contents of the three tables, repectively:
+2. Output from the script should appear on the terminal, but the data should also enter into the SQL database you set up earlier. To     check this, navigate into your MySQL 'book' database like you did earlier, but once in the book, enter the following commands to see    the contents of the three tables, repectively:
 
     SELECT * FROM MLB_MONEYLINE_table;
     
@@ -214,7 +214,7 @@ STEPS FOR EXECUTION
       /*10 * * * * python3 /home/ubuntu/Action_Network_MLB_Scrape_CRON.py >> /home/ubuntu/output.txt 2>&1
 
 
-  3. To check if program is running, navigate to the output.txt file using the following command. If the script has run successfully,        the output that appeared in the console from the Action_Network_MLB_Scrape.py execution earlier should appear in this txt file. 
+  3. To check if program is running, navigate to the output.txt file using the following command. If the script has run successfully,   the output that appeared in the console from the Action_Network_MLB_Scrape.py execution earlier should appear in this txt file. 
 
       nano output.txt
 

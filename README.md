@@ -50,7 +50,7 @@ STEPS FOR EXECUTION
    
    
 
-############################## SET UP FILE TRANSFER BETWEEN LOCAL MACHINE AND AWS INSTANCE ####################################
+############## SET UP FILE TRANSFER BETWEEN LOCAL MACHINE AND AWS INSTANCE #######################
 
 (Great instructions for this whole process can be found in this video - https://www.youtube.com/watch?v=Qxs7CYguo70)
 
@@ -59,7 +59,7 @@ STEPS FOR EXECUTION
 
 
 
-########################### INSTALL REQUIRED DEPENDENCIES IN VIRTUAL MACHINE TO RUN WEB SCRAPER ##################################
+########### INSTALL REQUIRED DEPENDENCIES IN VIRTUAL MACHINE TO RUN WEB SCRAPER ######################
 
 
   1. In list below, the name of each required package is followed by the required code for it's installation
@@ -106,7 +106,7 @@ STEPS FOR EXECUTION
   
     sudo mv geckodriver /usr/local/bin/geckodriver
   
-######################################### CREATE SQL DATABASE WHERE DATA WILL BE STORED #############################################
+##################### CREATE SQL DATABASE WHERE DATA WILL BE STORED ###############################
     
   1. Enter into your MySQL server with the following command. You will be asked to enter your password that you created when installing      MySQL server in the previous step. You will not be able to see your password being typed, but it's there. 
   
@@ -171,7 +171,7 @@ STEPS FOR EXECUTION
    4. To return to the main command line, type "exit" on the mysql prompt and press enter. 
    
 
-################################################# TIME TO RUN THE SCRIPT!!! ########################################################
+######################## TIME TO RUN THE SCRIPT!!! ##############################
     
 
 1. At this point, you can run the python script Action_Network_MLB_Scrape in this repo with the following command:

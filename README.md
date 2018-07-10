@@ -201,7 +201,7 @@ STEPS FOR EXECUTION
 
 
 
-############ OPTIONAL - TO RUN THIS SCRAPER AT A PRE-DETERMINED TIME INTERVAL, REFER TO THE CRON VERSION OF THE PYTHON FILE ############
+############ OPTIONAL - TO RUN THIS SCRAPER AT A PRE-DETERMINED TIME INTERVAL ############
 (A great explanation of crontab can be found in this video https://www.youtube.com/watch?v=bizxL_CA6J8)
 
   1. Within your Ubuntu Linux EC2 instance, navigate to the root user's Crontab using 

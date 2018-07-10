@@ -3,7 +3,7 @@ Web Scraper to be run on AWS Ubuntu EC2 - connect with MySQL databases to aggreg
 
 STEPS FOR EXECUTION
 
-######################################## CREATE AN AMAZON VIRTUAL MACHINE ################################################### 
+##################### CREATE AN AMAZON VIRTUAL MACHINE #############################
 
 (A great video covering the steps AFTER 6 below for Windows can be found here -> https://www.youtube.com/watch?v=bi7ow5NGC-U)
 

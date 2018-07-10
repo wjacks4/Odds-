@@ -3,6 +3,7 @@ Web Scraper to be run on AWS Ubuntu EC2 - connect with MySQL databases to aggreg
 
 STEPS FOR EXECUTION
 
+
 ##################### CREATE AN AMAZON VIRTUAL MACHINE #############################
 
 (A great video covering the steps AFTER 6 below for Windows can be found here -> https://www.youtube.com/watch?v=bi7ow5NGC-U)
@@ -49,6 +50,8 @@ STEPS FOR EXECUTION
    15. In the first line of the terminal, enter "ubuntu" in the "login as:" prompt. You are now controlling your AWS virtual machine!
    
    
+   
+   
 
 ############## SET UP FILE TRANSFER BETWEEN LOCAL MACHINE AND AWS INSTANCE #######################
 
@@ -59,7 +62,9 @@ STEPS FOR EXECUTION
 
 
 
-########### INSTALL REQUIRED DEPENDENCIES IN VIRTUAL MACHINE TO RUN WEB SCRAPER ######################
+
+
+########### INSTALL REQUIRED DEPENDENCIES IN VIRTUAL MACHINE TO RUN WEB SCRAPER ################
 
 
   1. In list below, the name of each required package is followed by the required code for it's installation
@@ -105,6 +110,9 @@ STEPS FOR EXECUTION
     chmod +x geckodriver
   
     sudo mv geckodriver /usr/local/bin/geckodriver
+  
+  
+  
   
 ##################### CREATE SQL DATABASE WHERE DATA WILL BE STORED ###############################
     
@@ -170,6 +178,9 @@ STEPS FOR EXECUTION
 
    4. To return to the main command line, type "exit" on the mysql prompt and press enter. 
    
+
+
+
 
 ######################## TIME TO RUN THE SCRIPT!!! ##############################
     

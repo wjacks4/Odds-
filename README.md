@@ -11,7 +11,7 @@ STEPS FOR EXECUTION
 
    1. First, an Amazon Virtual Machine needs to be created. Navigate to the Amazon Web Services homepage and select "Create a free account" 
    
-   2. Once your account has been created, navigate to the "Instances" tab, and select the blue button labeled "Launce Instance"
+   2. Once your account has been created, navigate to the "EC2" page under the "Services" dropdown menu. From there, select the blue "Create Instance" button. 
 
    3. Select the first Ubuntu server option you see.
    
@@ -45,20 +45,11 @@ STEPS FOR EXECUTION
    
           ec2-18-223-227-236.us-east-2.compute.amazonaws.com
  
-   14. Finally, you will need to use the "key" that we generated earlier. Expand the "SSH" sub-menu of "Connection", then select "Auth". Once there, click "Browse" and find your .ppk file generated in step 12. Click "Open" - you should see a terminal appear. Accept        the pop-up. 
+   14. Back in the PuTTY application, expand the "SSH" sub-menu of "Connection", then select "Auth". 
+   
+   15. Once there, click "Browse" and find your .ppk file generated in step 12. Click "Open" - you should see a terminal appear. Accept the pop-up. 
    
    15. In the first line of the terminal, enter "ubuntu" in the "login as:" prompt. You are now controlling your AWS virtual machine!
-   
-   
-   
-   
-
-############## SET UP FILE TRANSFER BETWEEN LOCAL MACHINE AND AWS INSTANCE #######################
-
-(Great instructions for this whole process can be found in this video - https://www.youtube.com/watch?v=Qxs7CYguo70)
-
-
-  1. This video does a better job than I can at explaining this process. The purpose of this is to transfer the python files in this     repo into the /home/ubuntu/ directory of the AWS virtual machine. 
 
 
 
@@ -67,7 +58,7 @@ STEPS FOR EXECUTION
 ########### INSTALL REQUIRED DEPENDENCIES IN VIRTUAL MACHINE TO RUN WEB SCRAPER ################
 
 
-  1. In list below, the name of each required package is followed by the required code for it's installation
+  1. In list below, the name of each required package is followed by the required code for it's installation. When prompted to enter Y/N, Press Y and then Enter. 
   
       - first, install an update for the whole machine
       
@@ -77,9 +68,9 @@ STEPS FOR EXECUTION
 
           sudo apt-get install python3
 
-      - MySQLdb
+      - MySQLdb (you will have to choose a password to enter into your MySQL Server - I suggest "root")
 
-          sudo apt-get install mysql-server (you will have to choose a password to enter into your MySQL Server - I suggest "root")
+          sudo apt-get install mysql-server 
 
           sudo apt install python3-dev libpython3-dev
           sudo apt install python3-mysqldb
@@ -101,15 +92,15 @@ STEPS FOR EXECUTION
       
           sudo apt-get install firefox
           
- 2. Next, the "geckodriver" functionality of the selenium webdriver installed in the previous step needs to installed with the following     commands (copy the wget line and right click on the command prompt, it will automatically run)
+ 2. Next, the "geckodriver" functionality of the selenium webdriver installed in the previous step needs to installed with the following     commands 
 
-wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+   wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   
-tar -xvzf geckodriver-v0.18.0-linux64.tar.gz
+   tar -xvzf geckodriver-v0.18.0-linux64.tar.gz
   
-chmod +x geckodriver
+   chmod +x geckodriver
   
-sudo mv geckodriver /usr/local/bin/geckodriver
+   sudo mv geckodriver /usr/local/bin/geckodriver
   
   
   
@@ -178,6 +169,39 @@ sudo mv geckodriver /usr/local/bin/geckodriver
 
    4. To return to the main command line, type "exit" on the mysql prompt and press enter. 
    
+
+############## SET UP FILE TRANSFER BETWEEN LOCAL MACHINE AND AWS INSTANCE #######################
+
+(Great instructions for this whole process can be found in this video - https://www.youtube.com/watch?v=Qxs7CYguo70 RELEVANT INFO STARTS AT 3:40)
+
+
+  1. In your web browser, navigate to https://filezilla-project.org/
+  
+  2. Select "Download FileZilla Client"
+  
+  3. On the following page, select the download appropriate for your OS (Windows, Linux, OSX)
+  
+  4. On the pop-up, "Decline" all additional "Sourceforge" programs, and select "Install Now" when the option appears on the final page
+  
+  5. Select "I agree" then "Next" on the client setup window. Then select "Finish". FileZilla should be up and running. 
+  
+  6. Now inside FileZilla, select "Edit", then "Settings" and select "SFTP" from the menu. 
+  
+  7. Inside SFTP, select "Add keyfile" and navigate to the folder where you stored your .ppk file you created in PuTTYgen earlier. Then select "OK"
+  
+  8. Navigate to your EC2 Dashboard. Copy your instances "Public DNS" as you did earlier. Again, your public DNS should look something like this:
+  
+        ec2-18-223-227-236.us-east-2.compute.amazonaws.com
+ 
+   9. Paste your Public DNS into the "Host:" blank in FileZilla.
+   
+   10. Enter "ubuntu" into the "Username:" blank in FileZilla.
+   
+   11. Enter "22" into the "Port:" blank in Filezilla. Then select "QuickConnect." You should see a list of all the files in your /home/ubuntu/ directory of your AWS EC2 Virtual Machine appear in the right side of the window. 
+   
+   12. In the left window showing the files on your local machine, navigate to the directory where you stored the python files included in this repository. 
+   
+   13. Once there, click and drag the files Action_Network_MLB_Scrape.py and Action_Network_MLB_Scrape_CRON.py over into the right window. Your files have now been transferred into your AWS Virtual Machine, and are ready to be executed!
 
 
 
